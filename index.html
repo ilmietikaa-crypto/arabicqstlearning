@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#18254a" />
+  <title>Arabic Quest — 3D Retro Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-shell">
+    <header class="hud">
+      <div class="hud-brand"><span class="pixel-star">✦</span><span>ARABIC QUEST</span></div>
+      <div class="hud-stat"><small>SCORE</small><strong id="score">00000</strong></div>
+      <div class="hud-stat"><small>COINS</small><strong>🪙 <span id="coins">00</span></strong></div>
+      <div class="hud-stat"><small>WORLD</small><strong>1-1</strong></div>
+      <div class="hud-stat"><small>TIME</small><strong id="time">300</strong></div>
+    </header>
+    <main id="viewport" aria-label="Area permainan 3D">
+      <div class="loading" id="loading">MEMUAT DUNIA PETUALANGAN...</div>
+      <div class="hint" id="hint">← → bergerak · ↑ / SPACE melompat</div>
+      <div class="toast" id="toast"></div>
+      <section class="modal hidden" id="quiz-modal" role="dialog" aria-modal="true">
+        <div class="modal-card">
+          <div class="modal-top"><span>★ MYSTERY BLOCK ★</span><span id="question-count">1 / 5</span></div>
+          <p class="eyebrow">TANTANGAN BAHASA ARAB MTs</p>
+          <h2 id="question-text">Pertanyaan</h2>
+          <div class="answers" id="answers"></div>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+          <button id="continue-btn" class="primary hidden">LANJUTKAN PETUALANGAN</button>
+        </div>
+      </section>
+      <section class="modal" id="start-modal">
+        <div class="modal-card intro-card">
+          <div class="big-mark">عَرَبِيَّة</div>
+          <p class="eyebrow">3D RETRO • LEARN & PLAY</p>
+          <h1>ARABIC QUEST</h1>
+          <p>Jelajahi dunia 3D, kumpulkan koin, hindari monster, dan pecahkan lima blok misteri untuk membuka gerbang kastil.</p>
+          <button id="start-btn" class="primary">MULAI PETUALANGAN</button>
+          <small>Kontrol: ← → / A D untuk bergerak · ↑ / W / SPACE untuk melompat</small>
+        </div>
+      </section>
+      <section class="modal hidden" id="win-modal">
+        <div class="modal-card intro-card">
+          <div class="big-mark">🏆</div><p class="eyebrow">LEVEL COMPLETE</p><h1>ANTA MUMTAZ!</h1>
+          <p>Hebat! Kamu berhasil menyelesaikan tantangan Bahasa Arab.</p>
+          <div class="result"><span>SKOR AKHIR</span><strong id="final-score">00000</strong><span>KOIN TERKUMPUL</span><strong id="final-coins">00</strong></div>
+          <button id="restart-btn" class="primary">MAIN LAGI</button>
+        </div>
+      </section>
+      <section class="modal hidden" id="gameover-modal">
+        <div class="modal-card intro-card"><div class="big-mark">💫</div><p class="eyebrow">TRY AGAIN</p><h1>JANGAN MENYERAH!</h1><p>Petualanganmu belum selesai. Coba lagi dan tuntaskan semua blok misteri.</p><button id="retry-btn" class="primary">ULANGI LEVEL</button></div>
+      </section>
+    </main>
+    <footer class="controls">
+      <div class="control-group"><button class="control-btn" data-key="ArrowLeft" aria-label="Kiri">◀</button><button class="control-btn" data-key="ArrowRight" aria-label="Kanan">▶</button></div>
+      <div class="control-note">JELAJAHI • BELAJAR • MENANG</div>
+      <button class="control-btn jump" data-key="Space" aria-label="Lompat">JUMP</button>
+    </footer>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
